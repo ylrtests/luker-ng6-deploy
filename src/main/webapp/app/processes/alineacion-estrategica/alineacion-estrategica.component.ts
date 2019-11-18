@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PlatformLocation } from '@angular/common';
 
@@ -8,7 +8,8 @@ import { PlatformLocation } from '@angular/common';
   styleUrls: ['./alineacion-estrategica.component.scss']
 })
 export class AlineacionEstrategicaComponent implements OnInit {
-  elementsCajaHerramientas = {
+  // Elementos de la caja de herramientas del proceso.
+  public elementsCajaHerramientas = {
     first: [ // Elementos de la primera columna
       {
         subtitle: '',
@@ -48,7 +49,7 @@ export class AlineacionEstrategicaComponent implements OnInit {
       }
     ]
   };
-  modalReference: any;
+  private modalReference: any;
 
   constructor(private modalService: NgbModal, private location: PlatformLocation) { }
 

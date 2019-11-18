@@ -1,34 +1,36 @@
-#modal-login{
-    background-color: #fafafa;
-}
-.login-title{
-    text-transform: uppercase;
-    color: #b3b3b3;
-    font-weight:bold;
+#modal-login {
+  background-color: #fafafa;
 }
 
-.logo{
-    width: 30%;
-    margin: 0 5px;
+.login-title {
+  text-transform: uppercase;
+  color: #b3b3b3;
+  font-weight: bold;
 }
 
-.login-line{
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
-    -webkit-flex-shrink: 1;
-    flex-shrink: 1;
-    background-color: #e1523d;
-    height: 2px;
+.logo {
+  width: 30%;
+  margin: 0 5px;
 }
 
-.form-bottom{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between ;
-    align-items: center;
-    margin: 20px 0;
+.login-line {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  flex-shrink: 1;
+  background-color: #e1523d;
+  height: 2px;
 }
 
-a, a:hover {
-    font-weight: initial;
+.form-bottom {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+a,
+a:hover {
+  font-weight: initial;
 }

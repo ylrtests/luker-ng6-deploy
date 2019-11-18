@@ -8,7 +8,7 @@ import { Component, OnInit, ElementRef, AfterViewInit, Input } from '@angular/co
 export class UniversidadLogoComponent implements OnInit, AfterViewInit {
 
   private items: any[] = []; // Contiene cada parte del svg
-  @Input() opaqueElements ?: Array<number>; // Señala elementos que se desea en opaco ej: [3,4]
+  @Input() opaqueElements?: Array<number>; // Señala elementos que se desea en opaco ej: [3,4]
 
   constructor(private elem: ElementRef) { }
 
@@ -31,7 +31,7 @@ export class UniversidadLogoComponent implements OnInit, AfterViewInit {
       if (i < this.items.length) {
         if (this.opaqueElements) {
           for (const numberOpaque of this.opaqueElements) {
-            if ( i === ( numberOpaque - 1 ) ) {
+            if (i === (numberOpaque - 1)) {
               this.items[i].classList.add('opaque');
               break;
             }

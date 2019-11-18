@@ -9,11 +9,11 @@ import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 })
 export class MapLukerComponent implements OnInit, AfterViewInit {
 
-  private mapElements: any[] = []; // Contiene cada parte del svg
-  private logoBrand: any; // Icono de casa luker del svg
-  private shadowItems: any; // Sombras del svg
-  private titles: any[]; // Titutlos del svg
-  modalRef: NgbModalRef;
+  private mapElements: any[] = []; // Contiene cada 'proceso' del mapa de talento
+  private logoBrand: any; // Icono de casa luker del mapa de talento
+  private shadowItems: any; // Sombras del mapa de talento
+  private titles: any[]; // Titulos del mapa de talento
+  modalRef: NgbModalRef; // Referencia al modal de Login
   @Input() activeElement ? = 0; // Indica cual elemento del mapa resaltar. Si es 0 ninguno es resaltado
   @Input() shouldOpenLogin ? = false; // Si es igual a "true" debería abrir el login en vez de redireccionar a un proceso.
   @Input() fastLoad ? = false; // Si es igual a "true" carga más rápido de acuerdo a lo definido en animateMap()
@@ -44,8 +44,9 @@ export class MapLukerComponent implements OnInit, AfterViewInit {
   }
 
   animateMap() {
-    let timeOut = 1000;
-    let timeItem = 700;
+    // Define tiempos de carga
+    let timeOut = 600;
+    let timeItem = 600;
     // Carga más rápido
     if (this.fastLoad) {
       timeOut = timeOut / 1.8;
@@ -57,13 +58,11 @@ export class MapLukerComponent implements OnInit, AfterViewInit {
       }
       this.logoBrand.style.opacity = 1;
       let i = 0;
-      const intervalo = setInterval(() => {
+      const intervalo = setInterval(() => { // Anima los 'procesos' del mapa de talento
         if (i < this.mapElements.length) {
-          // Existe elemento activo
-          if (this.activeElement > 0) {
-            if ((this.activeElement - 1) === i) {
-              // this.mapElements[i].classList.add('active');
-            } else {
+
+          if (this.activeElement > 0) { // Existe elemento activo
+            if ((this.activeElement - 1) !== i) {
               this.mapElements[i].classList.add('opaque');
             }
           }

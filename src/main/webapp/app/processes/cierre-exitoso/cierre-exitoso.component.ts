@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cierre-exitoso.scss']
 })
 export class CierreExitosoComponent implements OnInit {
-
-  elementsCajaHerramientas = {
+  // Elementos de la caja de herramientas del proceso.
+  public elementsCajaHerramientas = {
     first: [ // Elementos de la primera columna
       {
         subtitle: '',

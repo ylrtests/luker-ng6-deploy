@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./planeacion-estructura.scss']
 })
 export class PlaneacionEstructuraComponent implements OnInit {
-
-  elementsCajaHerramientas = {
+  // Elementos de la caja de herramientas del proceso.
+  public elementsCajaHerramientas = {
     first: [ // Elementos de la primera columna
       {
         subtitle: '',

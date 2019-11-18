@@ -11,7 +11,7 @@ import { PlatformLocation } from '@angular/common';
 export class IntegracionComponent implements OnInit {
 
   private modalReference: any;
-  public imgRol: string;
+  public imgRol: string; // url imagen del rol a mostrar.
   // Variable que almacena todos los pasos del componente integración, e incluye la url del
   // recurso en caso de tener.
   public stepsInfo = {
@@ -114,8 +114,14 @@ export class IntegracionComponent implements OnInit {
     this.location.onPopState(() => this.modalReference.close());
   }
 
+  // Método usado para pausar un video cuando se cierra la ventana 'media'
   pauseVideo() {
     const videoPlayer = <HTMLVideoElement>document.getElementById('videoPlayer');
     videoPlayer.pause();
+  }
+
+  // Método usado para volver a la página anterior
+  goBack() {
+    this.location.back();
   }
 }

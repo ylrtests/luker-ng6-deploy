@@ -376,6 +376,89 @@ ui bootstrap tweaks
   }
 }
 
+/* ==========================================================================
+Estilos carousel componente @Home
+========================================================================== */
+.carousel-item {
+  transition: opacity 0.7s ease !important;
+  position: absolute !important;
+  display: block !important;
+  opacity: 0;
+}
+
+.carousel-item.active {
+  position: relative !important;
+  opacity: 1;
+}
+
+.fit-carousel {
+  height: 100%;
+  .carousel-inner {
+    height: 100%;
+    .carousel-item {
+      height: 100%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.no-indicators .carousel-indicators {
+  display: none;
+}
+
+/* ==========================================================================
+Estilos para modals
+========================================================================== */
+.toolbox .modal-dialog {
+  @include md-screen {
+    max-width: 700px;
+  }
+  .modal-content {
+    border: none;
+  }
+}
+
+.toolbox-sm .modal-dialog {
+  @include md-screen {
+    max-width: 470px;
+  }
+  .modal-content {
+    border: none;
+  }
+}
+
+// Estilo modal: definicion estratégica
+.modal-def .modal-dialog {
+  @include md-screen {
+    max-width: 800px;
+  }
+  .modal-content {
+    border: none;
+  }
+}
+
+//Estilo modal: roles integracion
+.modal-rol .modal-dialog {
+  @include md-screen {
+    max-width: 75%;
+    margin: 0.5rem auto;
+  }
+  .modal-content {
+    border: none;
+  }
+  .modal-body {
+    padding: 0;
+  }
+}
+
+/* ==========================================================================
+Clases de colores, iconos y fondos según proceso
+========================================================================== */
+// Iconos
 .icon {
   &.primary {
     filter: colorFilter(primary);
@@ -405,83 +488,7 @@ ui bootstrap tweaks
     filter: colorFilter(grey);
   }
 }
-
-.carousel-item {
-  transition: opacity 0.7s ease !important;
-  position: absolute !important;
-  display: block !important;
-  opacity: 0;
-}
-
-.carousel-item.active {
-  position: relative !important;
-  opacity: 1;
-}
-
-// Estilos adicionales carousel
-.fit-carousel {
-  height: 100%;
-  .carousel-inner {
-    height: 100%;
-    .carousel-item {
-      height: 100%;
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-}
-
-.no-indicators .carousel-indicators {
-  display: none;
-}
-
-// Estilos caja de herramientas
-.toolbox .modal-dialog {
-  @include md-screen {
-    max-width: 700px;
-  }
-  .modal-content {
-    border: none;
-  }
-}
-
-.toolbox-sm .modal-dialog {
-  @include md-screen {
-    max-width: 470px;
-  }
-  .modal-content {
-    border: none;
-  }
-}
-
-// Estilo modal definicion estratégica
-.modal-def .modal-dialog {
-  @include md-screen {
-    max-width: 800px;
-  }
-  .modal-content {
-    border: none;
-  }
-}
-
-//Estilo modal de roles integracion
-.modal-rol .modal-dialog {
-  @include md-screen {
-    max-width: 75%;
-    margin: 0.5rem auto;
-  }
-  .modal-content {
-    border: none;
-  }
-  .modal-body {
-    padding: 0;
-  }
-}
-
-// Clases de colores  y fondos para los procesos
+// Colores
 .text-brand {
   color: color(primary) !important;
 }
@@ -598,7 +605,9 @@ ui bootstrap tweaks
   }
 }
 
-// Keyframes y clases de animaciones
+/* ==========================================================================
+Keyframes y clases de animaciones
+========================================================================== */
 @keyframes slideToBottom {
   0% {
     opacity: 0;
@@ -644,6 +653,9 @@ ui bootstrap tweaks
 }
 
 @keyframes tremble {
+  0% {
+    z-index: 2;
+  }
   20% {
     transform: rotate(1deg);
   }
@@ -655,6 +667,9 @@ ui bootstrap tweaks
   }
   80% {
     transform: rotate(-1deg);
+  }
+  100% {
+    z-index: 2;
   }
 }
 

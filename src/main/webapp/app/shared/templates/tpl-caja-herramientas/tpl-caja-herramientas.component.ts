@@ -18,16 +18,16 @@ export class TplCajaHerramientasComponent implements OnInit {
   @Input() titleModal ? = 'Caja de herramientas';
   @Input() positionTitleProcess = 'center'; // Center - right - left
   @Input() hideToolBoxIcon ? = false;
-  modalReference: any;
-
+  private modalReference: any;
   public processClasses: any;
 
   constructor(private modalService: NgbModal, private location: PlatformLocation) {
   }
 
   ngOnInit() {
-    // En un objeto, asigna las clases que usará,
+    // En el objeto processClasses, asigna las clases que usará,
     // de acuerdo al proceso del mapa de gestión en el que se encuentre
+    // indicado a través de la variable processNumber
     switch (this.processNumber) {
       // Colores por defecto Caso 0
       case 0:

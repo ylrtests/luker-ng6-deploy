@@ -8,7 +8,8 @@ import { Location } from '@angular/common';
 })
 export class TalentoComponent implements OnInit, AfterViewInit, OnDestroy {
   public processClasses: any;
-  elementsCajaHerramientas = {
+  // Elementos de la caja de herramientas del proceso.
+  public elementsCajaHerramientas = {
     first: [ // Elementos de la primera columna
       {
         subtitle: '',
@@ -56,7 +57,7 @@ export class TalentoComponent implements OnInit, AfterViewInit, OnDestroy {
     this.renderer2.removeAttribute(this.elementRef.nativeElement.ownerDocument.querySelector('.jh-card'), 'style');
   }
 
-  // Función que se usa para volver a la página anterior
+  // Método que se usa para volver a la página anterior
   goBack() {
     this.location.back();
   }

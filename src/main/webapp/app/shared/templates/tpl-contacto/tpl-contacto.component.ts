@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TplContactoComponent implements OnInit {
 
-  contactList = [
+  public contactList = [
     {
       'title': 'Comercial',
       'name': 'Ángela Chaparro',

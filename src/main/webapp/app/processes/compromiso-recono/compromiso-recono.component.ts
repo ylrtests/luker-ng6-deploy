@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./compromiso-recono.scss']
 })
 export class CompromisoReconoComponent implements OnInit {
-
-  elementsCajaHerramientas = {
+  // Elementos de la caja de herramientas del proceso.
+  public elementsCajaHerramientas = {
     first: [ // Elementos de la primera columna
       {
         subtitle: ' ',

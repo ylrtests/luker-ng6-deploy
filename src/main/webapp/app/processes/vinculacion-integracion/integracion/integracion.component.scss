@@ -8,6 +8,7 @@
 #integracion .first {
   background-color: #fff;
   min-height: 66vh;
+  position: relative;
   @include xl-screen {
     max-height: 720px;
     height: 66vh;
@@ -91,7 +92,7 @@
         background-color: #f4f4f4;
         border-radius: 5px;
         overflow: auto;
-        z-index: 2;
+        z-index: 3;
         width: 550px;
         height: 320px;
         padding: 0.5rem;
@@ -118,6 +119,20 @@
 
   .highlight {
     cursor: pointer;
+  }
+
+  #btn-regresar {
+    position: absolute;
+    top: 0;
+    right: 1%;
+    padding: 0.2rem 1rem;
+    margin: 1.5rem 0 3rem auto;
+    z-index: 2;
+    img {
+      height: 18px;
+      margin-top: -5px;
+      margin-left: 5px;
+    }
   }
 
   #step-one {

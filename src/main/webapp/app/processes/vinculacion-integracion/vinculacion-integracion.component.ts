@@ -6,8 +6,8 @@ import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
   styleUrls: ['./vinculacion-integracion.component.scss']
 })
 export class VinculacionIntegracionComponent implements OnInit, OnDestroy {
-
-  elementsCajaHerramientas = {
+  // Elementos de la caja de herramientas del proceso.
+  public elementsCajaHerramientas = {
     first: [ // Elementos de la primera columna
       {
         subtitle: '',

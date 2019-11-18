@@ -19,7 +19,7 @@ export class TplDefinicionesComponent implements OnInit {
   constructor(private elem: ElementRef, private location: Location) { }
 
   ngOnInit() {
-    // En un objeto, asigna las clases que usará,
+    // En el objeto processClasses, asigna las clases que usará,
     // de acuerdo al proceso del mapa de gestión en el que se encuentre
     switch (this.processNumber) {
       case 1:
@@ -73,7 +73,7 @@ export class TplDefinicionesComponent implements OnInit {
     }
   }
 
-  // Función que se usa para volver a la página anterior
+  // Método que se usa para volver a la página anterior
   goBack() {
     this.location.back();
   }
