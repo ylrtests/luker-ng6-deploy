@@ -1,0 +1,80 @@
+<div class="brand-container" id="lider">
+  <div class="row">
+    <div class="col-12">
+      <div class="hero definicion-hero">
+        <div>
+          <button class="btn btn-brand light" id="btn-regresar" [ngClass]="processClasses.bg" (click)="goBack()">
+            Regresar <img src="/content/icons/back-button.png" alt="">
+          </button>
+          <div class="btn btn-brand light static" [ngClass]="processClasses.bg">
+            <span class="font-weight-bold font-brand">Talento</span>
+            <span class="btn-badge"><img src="/content/icons/group-cycle.svg" alt="" class="icon"
+                [ngClass]="processClasses.icon"></span>
+          </div>
+          <h1 class="font-brand">
+            Como aliado estratégico
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row no-gutters definicion-bottom">
+    <div class="col-md-6">
+      <h1 class="font-brand font-weight-bold text-uppercase text-center mb-0 dark" [ngClass]="processClasses.color">
+        Principios</h1>
+      <ul class="list text-justify">
+        <li class="blt-primary">Concebir el talento como ventaja competitiva implica un &aacute;rea de Gesti&oacute;n
+          Humana que sea puente
+          entre el talento y el negocio y que tenga como prop&oacute;sito asegurar la capacidad organizacional de la
+          compa&ntilde;&iacute;a para que pueda lograr sus objetivos de sostenimiento y expansi&oacute;n. .</li>
+        <li class="blt-primary">Gesti&oacute;n Humana es un consultor interno que contribuye a que los equipos tengan
+          los recursos y
+          capacidades necesarias para lograr los resultados trazados. Para esto es vital que el &aacute;rea tenga un
+          pleno conocimiento del negocio, del entorno y una visi&oacute;n integral que le permita anticiparse y dar
+          respuesta a las necesidades de la organizaci&oacute;n. .</li>
+        <li class="blt-primary">Gesti&oacute;n Humana, a trav&eacute;s de herramientas, procesos, pol&iacute;ticas y
+          consultor&iacute;a,
+          habilita a los l&iacute;deres para que asuman su responsabilidad de gestionar el talento de la
+          compa&ntilde;&iacute;a y a su vez que &eacute;ste se constituya en la principal ventaja competitiva del
+          negocio.</li>
+      </ul>
+    </div>
+    <div class="col-md-6 item-wrapper">
+      <div class="item invert light" [ngClass]="processClasses.bg">
+        <div class="header">
+          <h2>Procesos</h2>
+        </div>
+        <img class="lamp" src="/content/images/home/lamp.png"></span>
+        <ul class="list text-justify">
+          <ng-container *ngTemplateOutlet="defaultListProcesos"></ng-container>
+        </ul>
+        <a *ngIf="canShowCajaHerramientas()" class="btn btn-brand" (click)="cajaHerramientasModal.open()">
+          <span class="font-weight-bold">Caja de herramientas</span>
+          <span class="btn-badge"><img src="/content/icons/tool.svg" alt="" class="icon primary"></span>
+        </a>
+      </div>
+      <div class="item">
+        <img class="aliado-text" src="/content/images/home/aliado-text.png"></span>
+        <img src="/content/icons/rocket.svg" class="icon primary rocket"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Rendering -->
+<ng-template #defaultListProcesos>
+  <li class="blt-sm">Enfoque de GH</li>
+  <li class="blt-sm">Mapa gesti&oacute;n del talento</li>
+  <li class="blt-sm">Estructura GH</li>
+  <li class="blt-sm">Descripci&oacute;n de cargo GH</li>
+  <li class="blt-sm">Foros de interacci&oacute;n GH y Clientes</li>
+  <li class="blt-sm">KPI&acute;s Gesti&oacute;n Humana</li>
+</ng-template>
+
+
+<!-- Modal Caja de Herramientas -->
+<jhi-tpl-caja-herramientas #cajaHerramientasModal
+    [elementsCajaHerramientas]="elementsCajaHerramientas" [titleFirstColumn]="'Grupo 1'"
+    [titleSecondColumn]="'Grupo 2'">
+</jhi-tpl-caja-herramientas>

@@ -2,23 +2,103 @@
 Main page styles
 ========================================================================== */
 
-.hipster {
-    display: inline-block;
-    width: 347px;
-    height: 497px;
-    background: url('../../content/images/hipster.png') no-repeat center top;
-    background-size: contain;
+@import "src/main/webapp/content/scss/custom-functions";
+@import "src/main/webapp/content/scss/custom-variables";
+
+:host {
+  // Cambia color de fondo del: card y jh-card, contenedores de la plataforma.
+  background: #808080;
 }
 
-/* wait autoprefixer update to allow simple generation of high pixel density media query */
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-    only screen and (min--moz-device-pixel-ratio: 2),
-    only screen and (-o-min-device-pixel-ratio: 2/1),
-    only screen and (min-device-pixel-ratio: 2),
-    only screen and (min-resolution: 192dpi),
-    only screen and (min-resolution: 2dppx) {
-    .hipster {
-        background: url('../../content/images/hipster2x.png') no-repeat center top;
-        background-size: contain;
+.hero.home-hero {
+  background-image: url("/content/images/home/home-hero.jpg"),
+    linear-gradient(90deg, rgba(128, 128, 128, 1) 0%, rgba(181, 177, 177, 1) 35%, rgba(158, 161, 162, 1) 100%);
+  justify-content: center;
+  height: 90vh;
+  @include lg-screen {
+    height: 60vh;
+  }
+
+  div:first-child {
+    position: relative;
+    height: auto;
+    margin: 0.625rem 0 0 4%;
+    h1 {
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 6px 5px 9px rgba(10, 10, 10, 0.77);
+      font-size: 3.2rem;
+      font-weight: 900;
     }
+    button {
+      @include md-screen {
+        position: absolute;
+        right: 15%;
+      }
+    }
+  }
+
+  .map-container {
+    height: 50%;
+    margin-top: 0.625rem;
+    margin-right: 0.625rem;
+    @include md-screen {
+      height: 70%;
+    }
+    @include lg-screen {
+      height: 95%;
+    }
+  }
+}
+
+.home-bottom {
+  flex-grow: 1;
+  @include md-screen {
+    max-height: 390px;
+  }
+
+  .bottom-panel {
+    background-image: url("/content/images/home/home-bottom.jpg");
+    background-size: cover;
+    background-position: right;
+    height: 100%;
+    div {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      width: 75%;
+      h2 {
+        //Title
+        color: #fff;
+        text-transform: uppercase;
+        text-shadow: 6px 5px 9px rgba(10, 10, 10, 0.77);
+        font-weight: 900;
+        margin-top: 0.625rem;
+        text-align: center;
+        margin-bottom: 1.875rem;
+        span {
+          font-weight: 400;
+          letter-spacing: -1px;
+        }
+      }
+      div {
+        //Buttons wrapper
+        position: relative;
+        width: 280px;
+        .btn-brand {
+          margin-bottom: 1.875rem;
+          width: 100%;
+          font-weight: 100;
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  .bottom-info {
+    height: 100%;
+    border-left: 4px solid #fff;
+  }
 }

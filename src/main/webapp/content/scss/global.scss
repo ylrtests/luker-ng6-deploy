@@ -1,4 +1,42 @@
-@import 'bootstrap-variables';
+/* ==========================================================================
+ global.scss
+========================================================================== */
+@import "bootstrap-variables";
+@import "custom-functions";
+@import "custom-variables";
+
+// Fuentes
+@import url("https://fonts.googleapis.com/css?family=Kanit:400,800&display=swap");
+@font-face {
+  font-family: "Hermes";
+  src: url("../fonts/hermes-regular-webfont.woff2") format("woff2"),
+    url("../fonts/hermes-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hermes";
+  src: url("../fonts/hermes-bold-webfont.woff2") format("woff2"),
+    url("../fonts/hermes-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hermes";
+  src: url("../fonts/hermes-thin-webfont.woff2") format("woff2"),
+    url("../fonts/hermes-thin-webfont.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cheddar Jack";
+  src: url("../fonts/CheddarJack.woff2") format("woff2"), url("../fonts/CheddarJack.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* ==============================================================
 Bootstrap tweaks
@@ -9,27 +47,28 @@ h1,
 h2,
 h3,
 h4 {
-    font-weight: 300;
+  // font-family: Hermes; Se puede usar esta fuente en toda la página
+  font-weight: 300;
 }
 
 a {
-    color: #533f03;
-    font-weight: bold;
+  color: #533f03;
+  font-weight: bold;
 }
 
 a:hover {
-    color: #533f03;
-    font-weight: bold;
+  color: #533f03;
+  font-weight: bold;
 }
 
 /* ==========================================================================
 Browser Upgrade Prompt
 ========================================================================== */
 .browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
 /* ==========================================================================
@@ -39,104 +78,106 @@ Generic styles
 /* Error highlight on input fields */
 .ng-valid[required],
 .ng-valid.required {
-    border-left: 5px solid green;
+  border-left: 5px solid green;
 }
 
 .ng-invalid:not(form) {
-    border-left: 5px solid red;
+  border-left: 5px solid red;
 }
 
 /* other generic styles */
 
 .jh-card {
-    padding: 1.5%;
-    margin-top: 20px;
+  padding: 0 1.5%;
+  margin-top: 20px;
+  &.card {
     border: none;
+  }
 }
 
 .error {
-    color: white;
-    background-color: red;
+  color: white;
+  background-color: red;
 }
 
 .pad {
-    padding: 10px;
+  padding: 10px;
 }
 
 .w-40 {
-    width: 40% !important;
+  width: 40% !important;
 }
 
 .w-60 {
-    width: 60% !important;
+  width: 60% !important;
 }
 
 .break {
-    white-space: normal;
-    word-break: break-all;
+  white-space: normal;
+  word-break: break-all;
 }
 
 .readonly {
-    background-color: #eee;
-    opacity: 1;
+  background-color: #eee;
+  opacity: 1;
 }
 
 .footer {
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 /* ==========================================================================
 make sure browsers use the pointer cursor for anchors, even with no href
 ========================================================================== */
 a:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .hand,
 [jhisortby] {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* ==========================================================================
 Custom alerts for notification
 ========================================================================== */
 .alerts {
-    .alert {
-        text-overflow: ellipsis;
-        pre {
-            background: none;
-            border: none;
-            font: inherit;
-            color: inherit;
-            padding: 0;
-            margin: 0;
-        }
-        .popover pre {
-            font-size: 10px;
-        }
+  .alert {
+    text-overflow: ellipsis;
+    pre {
+      background: none;
+      border: none;
+      font: inherit;
+      color: inherit;
+      padding: 0;
+      margin: 0;
     }
-    .toast {
-        position: fixed;
-        width: 100%;
-        &.left {
-            left: 5px;
-        }
-        &.right {
-            right: 5px;
-        }
-        &.top {
-            top: 55px;
-        }
-        &.bottom {
-            bottom: 55px;
-        }
+    .popover pre {
+      font-size: 10px;
     }
+  }
+  .toast {
+    position: fixed;
+    width: 100%;
+    &.left {
+      left: 5px;
+    }
+    &.right {
+      right: 5px;
+    }
+    &.top {
+      top: 55px;
+    }
+    &.bottom {
+      bottom: 55px;
+    }
+  }
 }
 
 @media screen and (min-width: 480px) {
-    .alerts .toast {
-        width: 50%;
-    }
+  .alerts .toast {
+    width: 50%;
+  }
 }
 
 /* ==========================================================================
@@ -146,59 +187,59 @@ entity tables helpers
 /* Remove Bootstrap padding from the element
 http://stackoverflow.com/questions/19562903/remove-padding-from-columns-in-bootstrap-3 */
 @mixin no-padding($side) {
-    @if $side == 'all' {
-        .no-padding {
-            padding: 0 !important;
-        }
-    } @else {
-        .no-padding-#{$side} {
-            padding-#{$side}: 0 !important;
-        }
+  @if $side == "all" {
+    .no-padding {
+      padding: 0 !important;
     }
+  } @else {
+    .no-padding-#{$side} {
+      padding-#{$side}: 0 !important;
+    }
+  }
 }
-@include no-padding('left');
-@include no-padding('right');
-@include no-padding('top');
-@include no-padding('bottom');
-@include no-padding('all');
+@include no-padding("left");
+@include no-padding("right");
+@include no-padding("top");
+@include no-padding("bottom");
+@include no-padding("all");
 
 /* bootstrap 3 input-group 100% width
 http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
 .width-min {
-    width: 1% !important;
+  width: 1% !important;
 }
 
 /* Makes toolbar not wrap on smaller screens
 http://www.sketchingwithcss.com/samplechapter/cheatsheet.html#right */
 .flex-btn-group-container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-justify-content: flex-end;
-    justify-content: flex-end;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 /* ==========================================================================
 entity detail page css
 ========================================================================== */
 .row.jh-entity-details > {
-    dd {
-        margin-bottom: 15px;
-    }
+  dd {
+    margin-bottom: 15px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .row.jh-entity-details > {
-        dt {
-            margin-bottom: 15px;
-        }
-        dd {
-            border-bottom: 1px solid #eee;
-            padding-left: 180px;
-            margin-left: 0;
-        }
+  .row.jh-entity-details > {
+    dt {
+      margin-bottom: 15px;
     }
+    dd {
+      border-bottom: 1px solid #eee;
+      padding-left: 180px;
+      margin-left: 0;
+    }
+  }
 }
 
 /* ==========================================================================
@@ -208,24 +249,448 @@ ui bootstrap tweaks
 .pagination,
 .carousel,
 .panel-title a {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .datetime-picker-dropdown > li.date-picker-menu div > table .btn-default,
 .uib-datepicker-popup > li > div.uib-datepicker > table .btn-default {
-    border: 0;
+  border: 0;
 }
 
 .datetime-picker-dropdown > li.date-picker-menu div > table:focus,
 .uib-datepicker-popup > li > div.uib-datepicker > table:focus {
-    outline: none;
+  outline: none;
 }
 
 .thread-dump-modal-lock {
-    max-width: 450px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  max-width: 450px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+ Estilos personalizados globales.
+========================================================================== */
+
+.brand-container {
+  display: flex;
+  flex-flow: column;
+  margin: -20px auto 0;
+  min-height: calc(100vh - 45px);
+  background-color: #808080;
+
+  @include xl-screen {
+    padding: 0 8%;
+    max-width: 1800px;
+  }
+
+  .hero {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    background-size: cover;
+    width: 100%;
+    border-bottom: 4px solid #fff;
+    @include lg-screen {
+      max-height: 645px;
+    }
+  }
+}
+
+.font-brand {
+  font-family: $font-brand;
+}
+
+.btn-brand {
+  background: color(primary);
+  border-radius: 10px;
+  position: relative;
+  color: #fff;
+  transition: all 0.3s ease 0s;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: intrinsic;
+  width: fit-content;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
+
+  .btn-badge {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -3px 4px 10px rgba(10, 10, 10, 0.4);
+    font-size: 11px;
+    left: -28px;
+    top: -25px;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &.filled {
+    padding: 1.5rem 1rem;
+    .btn-badge {
+      left: -5px;
+      top: -30px;
+    }
+  }
+
+  img.right-arrow {
+    margin-top: -0.45rem;
+    margin-left: 0.5rem;
+    height: 0.65rem;
+    filter: colorFilter(white);
+  }
+
+  &:hover {
+    color: #fff;
+    transform: scale(1.1);
+    font-weight: initial;
+    box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  }
+}
+
+.btn-modal {
+  border-radius: 25px;
+  position: relative;
+  background: #fff !important;
+  transition: all 0.3s ease 0s;
+  margin: 5px auto;
+  padding: 3px 13px;
+  text-decoration: none;
+  font-weight: 400;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    text-decoration: none;
+    font-weight: 400;
+  }
+}
+
+.icon {
+  &.primary {
+    filter: colorFilter(primary);
+  }
+  &.first {
+    filter: colorFilter(first);
+  }
+  &.second {
+    filter: colorFilter(second);
+  }
+  &.third {
+    filter: colorFilter(third);
+  }
+  &.fourth {
+    filter: colorFilter(fourth);
+  }
+  &.fifth {
+    filter: colorFilter(fifth);
+  }
+  &.sixth {
+    filter: colorFilter(sixth);
+  }
+  &.white {
+    filter: colorFilter(white);
+  }
+  &.grey {
+    filter: colorFilter(grey);
+  }
+}
+
+.carousel-item {
+  transition: opacity 0.7s ease !important;
+  position: absolute !important;
+  display: block !important;
+  opacity: 0;
+}
+
+.carousel-item.active {
+  position: relative !important;
+  opacity: 1;
+}
+
+// Estilos adicionales carousel
+.fit-carousel {
+  height: 100%;
+  .carousel-inner {
+    height: 100%;
+    .carousel-item {
+      height: 100%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.no-indicators .carousel-indicators {
+  display: none;
+}
+
+// Estilos caja de herramientas
+.toolbox .modal-dialog {
+  @include md-screen {
+    max-width: 700px;
+  }
+  .modal-content {
+    border: none;
+  }
+}
+
+.toolbox-sm .modal-dialog {
+  @include md-screen {
+    max-width: 470px;
+  }
+  .modal-content {
+    border: none;
+  }
+}
+
+// Estilo modal definicion estratégica
+.modal-def .modal-dialog {
+  @include md-screen {
+    max-width: 800px;
+  }
+  .modal-content {
+    border: none;
+  }
+}
+
+//Estilo modal de roles integracion
+.modal-rol .modal-dialog {
+  @include md-screen {
+    max-width: 75%;
+    margin: 0.5rem auto;
+  }
+  .modal-content {
+    border: none;
+  }
+  .modal-body {
+    padding: 0;
+  }
+}
+
+// Clases de colores  y fondos para los procesos
+.text-brand {
+  color: color(primary) !important;
+}
+.color-1 {
+  color: color(first);
+  &.light {
+    color: color(first-light);
+  }
+  &.dark {
+    color: color(first-dark);
+  }
+}
+.color-2 {
+  color: color(second);
+  &.light {
+    color: color(second-light);
+  }
+  &.dark {
+    color: color(second-dark);
+  }
+}
+.color-3 {
+  color: color(third);
+  &.light {
+    color: color(third-light);
+  }
+  &.dark {
+    color: color(third-dark);
+  }
+}
+.color-4 {
+  color: color(fourth);
+  &.light {
+    color: color(fourth-light);
+  }
+  &.dark {
+    color: color(fourth-dark);
+  }
+}
+.color-5 {
+  color: color(fifth);
+  &.light {
+    color: color(fifth-light);
+  }
+  &.dark {
+    color: color(fifth-dark);
+  }
+}
+.color-6 {
+  color: color(sixth);
+  &.light {
+    color: color(sixth-light);
+  }
+  &.dark {
+    color: color(sixth-dark);
+  }
+}
+// Fondos
+.bg-brand {
+  background-color: color(primary);
+}
+.bg-1 {
+  background-color: color(first);
+  &.light {
+    background-color: color(first-light);
+  }
+  &.dark {
+    background-color: color(first-dark);
+  }
+}
+.bg-2 {
+  background-color: color(second);
+  &.light {
+    background-color: color(second-light);
+  }
+  &.dark {
+    background-color: color(second-dark);
+  }
+}
+.bg-3 {
+  background-color: color(third);
+  &.light {
+    background-color: color(third-light);
+  }
+  &.dark {
+    background-color: color(third-dark);
+  }
+}
+.bg-4 {
+  background-color: color(fourth);
+  &.light {
+    background-color: color(fourth-light);
+  }
+  &.dark {
+    background-color: color(fourth-dark);
+  }
+}
+.bg-5 {
+  background-color: color(fifth);
+  &.light {
+    background-color: color(fifth-light);
+  }
+  &.dark {
+    background-color: color(fifth-dark);
+  }
+}
+.bg-6 {
+  background-color: color(sixth);
+  &.light {
+    background-color: color(sixth-light);
+  }
+  &.dark {
+    background-color: color(sixth-dark);
+  }
+}
+
+// Keyframes y clases de animaciones
+@keyframes slideToBottom {
+  0% {
+    opacity: 0;
+    bottom: 150px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+@keyframes slideToTop {
+  0% {
+    opacity: 0;
+    top: 150px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes slideToLeft {
+  0% {
+    opacity: 0;
+    left: 50%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes slideToRight {
+  0% {
+    opacity: 0;
+    right: 50%;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+@keyframes tremble {
+  20% {
+    transform: rotate(1deg);
+  }
+  40% {
+    transform: rotate(-1deg);
+  }
+  60% {
+    transform: rotate(1deg);
+  }
+  80% {
+    transform: rotate(-1deg);
+  }
+}
+
+.hide {
+  opacity: 0;
+}
+
+.slide-to-bottom {
+  animation-name: slideToBottom;
+  animation-duration: 1s;
+  animation-fill-mode: initial;
+}
+
+.slide-to-top {
+  animation-name: slideToTop;
+  animation-duration: 1s;
+  animation-fill-mode: initial;
+}
+
+.slide-to-left {
+  animation-name: slideToLeft;
+  animation-duration: 1.3s;
+  animation-fill-mode: initial;
+}
+
+.slide-to-right {
+  animation-name: slideToRight;
+  animation-duration: 1.3s;
+  animation-fill-mode: initial;
+}
+
+.tremble {
+  animation-name: tremble;
+  animation-duration: 1s;
+  animation-fill-mode: initial;
+  animation-iteration-count: 3;
 }
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */

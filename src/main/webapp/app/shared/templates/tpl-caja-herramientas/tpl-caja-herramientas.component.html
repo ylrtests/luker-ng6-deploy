@@ -1,0 +1,47 @@
+<ng-template #modalTools let-c="close">
+    <div class="modal-header">
+        <div class="header-top">
+            <img src="/content/icons/close.png" alt="Cerrar" (click)="c('Cross click')">
+        </div>
+        <div class="header-logo">
+            <div class="header-line"></div>
+            <img src="/content/logo.svg" class="logo" alt="logo">
+            <div class="header-line"></div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <h1 [ngClass]="processClasses.bg" class="dark">{{titleModal}}</h1>
+        <div class="toolbox-content light" [ngClass]="processClasses.bg">
+            <div class="toolbox-column">
+                <h2 class="subtitle">{{titleFirstColumn}}</h2>
+                <div class="column-item" *ngFor="let linksElement of elementsCajaHerramientas.first">
+                    <div class="title-wrapper" *ngIf="linksElement.subtitle">
+                        <h2>{{linksElement.subtitle}}</h2>
+                    </div>
+                    <div class="link-wrapper">
+                        <a *ngFor="let item of linksElement.items" href="{{item.url}}" class="btn-modal dark"
+                            [ngClass]="processClasses.color" target="_blank">{{item.title}}</a>
+                    </div>
+                </div>
+                <h2 *ngIf="positionTitleProcess === 'left'" class="font-brand" id="title-process">{{titleProcess}}</h2>
+            </div>
+            <div class="toolbox-column" *ngIf="elementsCajaHerramientas.second">
+                <h2 class="subtitle">{{titleSecondColumn}}</h2>
+                <div class="column-item add-mb" *ngFor="let linksElement of elementsCajaHerramientas.second">
+                    <div class="title-wrapper" *ngIf="linksElement.subtitle">
+                        <h2>{{linksElement.subtitle}}</h2>
+                    </div>
+                    <div class="link-wrapper">
+                        <a *ngFor="let item of linksElement.items" href="{{item.url}}" class="btn-modal dark"
+                            [ngClass]="processClasses.color" target="_blank">{{item.title}}</a>
+                    </div>
+                </div>
+                <h2 *ngIf="positionTitleProcess === 'right'" class="font-brand" id="title-process">{{titleProcess}}</h2>
+            </div>
+        </div>
+        <div class="toolbox-footer light" [ngClass]="processClasses.bg">
+            <h2 *ngIf="positionTitleProcess === 'center'" class="font-brand" id="title-process">{{titleProcess}}</h2>
+            <div *ngIf="!hideToolBoxIcon"><img src="/content/icons/tool.svg" alt="" class="icon" [ngClass]="processClasses.icon"></div>
+        </div>
+    </div>
+</ng-template>

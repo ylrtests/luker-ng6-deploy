@@ -1,0 +1,166 @@
+@import "src/main/webapp/content/scss/custom-functions";
+@import "src/main/webapp/content/scss/custom-variables";
+
+#contacto .hero {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(245, 245, 245, 1) 40%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  border-bottom: none;
+  height: auto;
+
+  @include md-screen {
+    background-image: url("/content/images/heroes/contacto-hero.jpg"),
+      linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 40%, rgba(255, 255, 255, 1) 100%);
+    height: 72vh;
+  }
+  @include lg-screen {
+    justify-content: initial;
+  }
+
+  .list-contact {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    position: relative;
+    .wrapper {
+      @include lg-screen {
+        width: 75%;
+      }
+    }
+    .item-contact {
+      display: flex;
+      flex-flow: column nowrap;
+      margin-bottom: 0.8rem;
+      padding-left: 0.5rem;
+      color: #808080;
+      & > h2 {
+        color: color(primary);
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        white-space: pre;
+      }
+
+      .img-wrapper {
+        width: 56px;
+        @include md-screen {
+          margin-right: 1rem;
+        }
+      }
+
+      .item-details {
+        line-height: 1;
+        font-size: 0.9rem;
+
+        .name {
+          text-transform: uppercase;
+          font-weight: 400;
+          margin-bottom: 0;
+        }
+        .position {
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 1rem;
+        }
+        .email {
+          margin-bottom: 0;
+          position: relative;
+          .icon {
+            position: absolute;
+            top: -4px;
+            height: 1.25rem;
+            padding: 0 5px;
+          }
+        }
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+        margin-top: 2rem;
+        padding-top: 0.8rem;
+        padding-bottom: 1rem;
+        color: #fff;
+        border-radius: 10px;
+        background: rgba(225, 85, 63, 0.8);
+      }
+    }
+  }
+
+  .map-container {
+    z-index: 2;
+    height: 75%;
+    width: inherit;
+    max-width: 375px;
+    max-height: 375px;
+    text-align: center;
+    margin: 0 auto;
+    @include md-screen {
+      position: absolute;
+      height: 66%;
+      bottom: -3rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+#contacto .bottom {
+  background-color: color(primary);
+  position: relative;
+  padding-top: 1rem;
+  flex-grow: 1;
+  align-items: flex-start;
+  overflow: hidden;
+  @include md-screen {
+    max-height: 390px;
+  }
+  h2.main-title {
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 6px 5px 9px rgba(10, 10, 10, 0.77);
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    @include md-screen {
+      margin: 0;
+      padding-top: 1.5rem;
+      min-width: 33%;
+    }
+  }
+
+  .text {
+    padding: 0 1.5rem 0 10%;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    white-space: nowrap;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: intrinsic;
+    width: fit-content;
+    h2 {
+      margin-bottom: 0;
+      font-weight: 900;
+    }
+    .title-contact {
+      font-family: "Cheddar Jack";
+      font-weight: 400;
+      font-size: 3.5rem;
+    }
+    @include lg-screen {
+      border-left: 1px solid #fff;
+    }
+  }
+
+  .contact {
+    transition: all 0.6s;
+    height: 3rem;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

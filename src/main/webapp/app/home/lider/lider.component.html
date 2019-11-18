@@ -1,0 +1,67 @@
+<div class="brand-container" id="lider">
+  <div class="row">
+    <div class="col-12">
+      <div class="hero definicion-hero">
+        <div>
+          <button class="btn btn-brand light" id="btn-regresar" [ngClass]="processClasses.bg" (click)="goBack()">
+            Regresar <img src="/content/icons/back-button.png" alt="">
+          </button>
+          <div class="btn btn-brand light static" [ngClass]="processClasses.bg">
+            <span class="font-weight-bold font-brand">Líder</span>
+            <span class="btn-badge"><img src="/content/icons/group-cycle.svg" alt="" class="icon"
+                [ngClass]="processClasses.icon"></span>
+          </div>
+          <h1 class="font-brand">
+            Desarrollador de su gente
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row no-gutters definicion-bottom">
+    <div class="col-md-6">
+      <h1 class="font-brand font-weight-bold text-uppercase text-center mb-0 dark" [ngClass]="processClasses.color">
+        Principios</h1>
+      <ul class="list text-justify">
+        <li class="blt-6">Para asegurar que nuestro talento sea nuestra principal ventaja competitiva en Casa Luker
+          hemos definido el estilo de dirección que esperamos que sea compartido y adoptado por todos nuestros líderes
+          en función de asegurar el crecimiento de nuestro negocio y la permanencia en el largo plazo del talento en la
+          organización.</li>
+      </ul>
+      <h3>DECLARACIÓN DEL ESTILO DE LIDERAZGO CASA LUKER:</h3>
+      <ul class="list text-justify">
+        <li class="blt-6">En Casa Luker creemos firmemente que los líderes determinan la excelencia de nuestra
+          organización asegurándose de lograr permanentemente resultados sobresalientes para satisfacer a nuestros
+          consumidores y clientes.</li>
+        <li class="blt-6">Crean un entorno que habilita, desarrolla y logra lo mejor de nuestro talento en función de
+          brindar un excelente servicio y entregar productos de calidad que construyan relaciones sostenibles con
+          nuestros grupos de interés basadas en la generación de valor, la confianza y la credibilidad.</li>
+        <li class="blt-6">Para hacerlo los líderes Casa Luker modelan nuestros valores, conforman equipos con el mejor
+          talento y aseguran su alineación y compromiso con nuestro propósito en beneficio de las personas, los equipos,
+          la empresa, nuestros accionistas y nuestro país</li>
+      </ul>
+    </div>
+    <div class="col-md-6 item-wrapper">
+      <div class="item invert light" [ngClass]="processClasses.bg">
+        <div class="header">
+          <h2>Procesos</h2>
+        </div>
+        <img class="lamp" src="/content/images/home/lamp.png"></span>
+        <ul class="list text-justify">
+          <ng-container *ngTemplateOutlet="defaultListProcesos"></ng-container>
+        </ul>
+      </div>
+      <div class="item">
+        <img class="img-lider" src="/content/images/home/lider-img.png"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Rendering -->
+<ng-template #defaultListProcesos>
+  <li class="blt-sm">Declaración del Estilo de liderazgo y Rol del Jefe Casa Luker</li>
+  <li class="blt-sm">Mapa Gestión del talento</li>
+  <li class="blt-sm">Kpi´s talento para líderes </li>
+</ng-template>
