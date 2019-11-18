@@ -1,0 +1,62 @@
+<div class="brand-container" id="desemDesarrollo">
+    <div class="row">
+        <div class="col-12">
+            <div class="hero process-hero">
+                <div>
+                    <h1 class="font-brand">Talento & gestión</h1>
+                    <div class="map-container">
+                        <jhi-map-luker [activeElement]="4" [fastLoad]="true"></jhi-map-luker>
+                    </div>
+                </div>
+                <div class="buttons-top">
+                    <a class="btn btn-brand bg-4 filled" routerLink="./placeholder">
+                        <span class="font-weight-bold">Gestión de<br>desempeño</span>
+                        <span class="btn-badge"><img src="/content/icons/figure-flag.svg" alt=""
+                                class="icon fourth"></span>
+                    </a>
+                    <a class="btn btn-brand bg-4 filled" routerLink="/proceso/universidad">
+                        <span class="font-weight-bold">Universidad<br>Casa Luker</span>
+                        <span class="btn-badge"><img src="/content/icons/notebook.svg" alt=""
+                                class="icon fourth"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row no-gutters process-bottom">
+        <div class="col-lg-5"></div>
+        <div class="col-lg-7">
+            <h2 class="font-brand">Desempeño y desarrollo</h2>
+            <div class="text-process">
+                <div>
+                    Alineamos la <strong>contribuci&oacute;n individual</strong> con los objetivos corporativos y
+                    <strong>potencializamos</strong> el talento de la&nbsp; organizaci&oacute;n (competencias y&nbsp;
+                    conocimientos) promoviendo su&nbsp; desarrollo permanente.
+                </div>
+            </div>
+            <div class="buttons-bottom">
+                <div>
+                    <h3>Conoce</h3>
+                    <h3>Más</h3>
+                </div>
+                <button class="btn btn-brand bg-4 dark" (click)="cajaHerramientasModal.open()">
+                    <span class="font-weight-bold">Caja de herramientas <img class="right-arrow"
+                            src="/content/icons/right-arrow.svg"></span>
+                    <span class="btn-badge"><img src="/content/icons/tool.svg" alt="" class="icon fourth"></span>
+                </button>
+                <a class="btn btn-brand bg-4 dark" routerLink="./definiciones">
+                    <span class="font-weight-bold">Definiciones <img class="right-arrow"
+                            src="/content/icons/right-arrow.svg"></span>
+                    <span class="btn-badge"><img src="/content/icons/group-cycle.svg" alt="" class="icon fourth"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Caja de Herramientas -->
+<jhi-tpl-caja-herramientas #cajaHerramientasModal [processNumber]="4"
+    [elementsCajaHerramientas]="elementsCajaHerramientas" [titleFirstColumn]="'Formatos\npara descargar'"
+    [titleSecondColumn]="'Consulta\naqui'" [titleProcess]="'Desempeño y desarrollo'" [positionTitleProcess]="'center'">
+</jhi-tpl-caja-herramientas>

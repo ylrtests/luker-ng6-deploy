@@ -1,0 +1,56 @@
+<div class="brand-container" id="cierreExitoso">
+  <div class="row">
+    <div class="col-12">
+      <div class="hero process-hero">
+        <div>
+          <h1 class="font-brand">Talento & gestión</h1>
+          <div class="map-container">
+            <jhi-map-luker [activeElement]="6" [fastLoad]="true"></jhi-map-luker>
+          </div>
+        </div>
+        <div class="buttons-top">
+          <a class="btn btn-brand bg-6 filled" routerLink="./placeholder">
+            <span class="font-weight-bold">Entrevista<br>de retiro</span>
+            <span class="btn-badge"><img src="/content/icons/figure-pc.svg" alt="" class="icon sixth"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row no-gutters process-bottom">
+    <div class="col-lg-5"></div>
+    <div class="col-lg-7">
+      <h2 class="font-brand">Cierre exitoso</h2>
+      <div class="text-process">
+        <div>
+          Garantizamos procesos de desvinculaci&oacute;n basados en la <strong>objetividad</strong>, el <strong>trato
+            digno</strong> y el <strong>respeto</strong>.
+        </div>
+      </div>
+      <div class="buttons-bottom">
+        <div>
+          <h3>Conoce</h3>
+          <h3>Más</h3>
+        </div>
+        <button class="btn btn-brand bg-6 dark" (click)="cajaHerramientasModal.open()">
+          <span class="font-weight-bold">Caja de herramientas <img class="right-arrow"
+              src="/content/icons/right-arrow.svg"></span>
+          <span class="btn-badge"><img src="/content/icons/tool.svg" alt="" class="icon sixth"></span>
+        </button>
+        <a class="btn btn-brand bg-6 dark" routerLink="./definiciones">
+          <span class="font-weight-bold">Definiciones <img class="right-arrow"
+              src="/content/icons/right-arrow.svg"></span>
+          <span class="btn-badge"><img src="/content/icons/group-cycle.svg" alt="" class="icon sixth"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Caja de Herramientas -->
+<jhi-tpl-caja-herramientas #cajaHerramientasModal [processNumber]="6"
+    [elementsCajaHerramientas]="elementsCajaHerramientas" [titleFirstColumn]="'Formatos\npara descargar'"
+    [titleSecondColumn]="'Consulta\naquí'" [titleProcess]="'Cierre exitoso'"
+    [positionTitleProcess]="'right'">
+</jhi-tpl-caja-herramientas>

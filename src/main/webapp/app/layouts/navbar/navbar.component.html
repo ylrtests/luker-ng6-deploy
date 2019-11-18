@@ -1,9 +1,12 @@
 <nav class="navbar navbar-dark navbar-expand-md jh-navbar">
-    <div class="jh-logo-container float-left">
+    
+        <!-- Se solicito remover el logo. -->
+        
+        <div class="jh-logo-container float-left">
         <a class="jh-navbar-toggler d-lg-none float-right" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
             <fa-icon [icon]="'bars'"></fa-icon>
         </a>
-        <a class="navbar-brand logo float-left" routerLink="/" (click)="collapseNavbar()">
+        <a class="navbar-brand float-left" routerLink="/" (click)="collapseNavbar()">
             <span class="logo-img"></span>
             <span jhiTranslate="global.title" class="navbar-title">Luker</span> <span class="navbar-version">{{version}}</span>
         </a>
@@ -41,9 +44,21 @@
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
                     <li>
+                        <a class="dropdown-item" routerLink="admin/gateway" routerLinkActive="active" (click)="collapseNavbar()">
+                            <fa-icon [icon]="'road'" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.admin.gateway">Gateway</span>
+                        </a>
+                    </li>
+                    <li>
                         <a class="dropdown-item" routerLink="admin/user-management" routerLinkActive="active" (click)="collapseNavbar()">
                             <fa-icon [icon]="'user'" [fixedWidth]="true"></fa-icon>
                             <span jhiTranslate="global.menu.admin.userManagement">User management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="admin/jhi-tracker" routerLinkActive="active" (click)="collapseNavbar()">
+                            <fa-icon [icon]="'eye'" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.admin.tracker">User tracker</span>
                         </a>
                     </li>
                     <li>

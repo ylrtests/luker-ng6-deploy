@@ -1,0 +1,54 @@
+@import "src/main/webapp/content/scss/custom-functions";
+@import "src/main/webapp/content/scss/custom-variables";
+
+.brand-container {
+  height: calc(100vh - 45px);
+  overflow: hidden;
+  .bg-wrapper {
+    position: relative;
+    height: 100%;
+    background-image: url("/content/images/bg-universidad.png");
+    background-color: #fff;
+    background-size: contain;
+  }
+  .logo-container {
+    height: 65%;
+    max-width: 95%;
+    max-height: 1350px;
+    margin: 1rem auto 0;
+    @include lg-screen{
+      height: 90%;
+    }
+  }
+  .bottom {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    .contact {
+      height: 6rem;
+      transition: all 0.6s;
+      cursor: pointer;
+      @include lg-screen {
+        position: absolute;
+        bottom: 0;
+        left: 1.5rem;
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    .btn-brand:first-of-type {
+      width: 180px;
+      @include lg-screen {
+        position: absolute;
+        right: 1rem;
+        bottom: 2rem;
+      }
+    }
+    .btn-brand:last-of-type{
+      margin-right: 3%;
+    }
+  }
+}
+

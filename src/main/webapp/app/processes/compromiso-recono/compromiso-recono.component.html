@@ -1,0 +1,56 @@
+<div class="brand-container" id="compromisoRecono">
+    <div class="row">
+        <div class="col-12">
+            <div class="hero process-hero">
+                <div>
+                    <h1 class="font-brand">Talento & gestión</h1>
+                    <div class="map-container">
+                        <jhi-map-luker [activeElement]="5" [fastLoad]="true"></jhi-map-luker>
+                    </div>
+                </div>
+                <div class="buttons-top">
+                    <a class="btn btn-brand bg-5 filled" routerLink="./placeholder">
+                        <span class="font-weight-bold">Herramienta<br>de reconocimiento</span>
+                        <span class="btn-badge"><img src="/content/icons/group-up.svg" alt="" class="icon fifth"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row no-gutters process-bottom">
+        <div class="col-lg-5"></div>
+        <div class="col-lg-7">
+            <h2 class="font-brand">Compromiso y reconocimiento</h2>
+            <div class="text-process">
+                <div>
+                    Generamos alto compromiso y <strong>conexi&oacute;n</strong> con la organizaci&oacute;n y
+                    contribuimos a&nbsp; impactar la <strong>calidad de vida</strong> del equipo.
+                </div>
+            </div>
+            <div class="buttons-bottom">
+                <div>
+                    <h3>Conoce</h3>
+                    <h3>Más</h3>
+                </div>
+                <button class="btn btn-brand bg-5 dark" (click)="cajaHerramientasModal.open()">
+                    <span class="font-weight-bold">Caja de herramientas <img class="right-arrow"
+                            src="/content/icons/right-arrow.svg"></span>
+                    <span class="btn-badge"><img src="/content/icons/tool.svg" alt="" class="icon fifth"></span>
+                </button>
+                <a class="btn btn-brand bg-5 dark" routerLink="./definiciones">
+                    <span class="font-weight-bold">Definiciones <img class="right-arrow"
+                            src="/content/icons/right-arrow.svg"></span>
+                    <span class="btn-badge"><img src="/content/icons/group-cycle.svg" alt="" class="icon fifth"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Caja de Herramientas -->
+<jhi-tpl-caja-herramientas #cajaHerramientasModal [processNumber]="5"
+    [elementsCajaHerramientas]="elementsCajaHerramientas" [titleFirstColumn]="'Formatos\npara descargar'"
+    [titleProcess]="'Compromiso y reconocimiento'"
+    [positionTitleProcess]="'center'">
+</jhi-tpl-caja-herramientas>

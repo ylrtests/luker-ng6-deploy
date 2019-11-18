@@ -1,0 +1,285 @@
+@import "src/main/webapp/content/scss/custom-functions";
+@import "src/main/webapp/content/scss/custom-variables";
+
+.brand-container {
+  overflow: hidden;
+}
+
+#integracion .first {
+  background-color: #fff;
+  min-height: 66vh;
+  @include xl-screen {
+    max-height: 720px;
+    height: 66vh;
+    min-height: max-content;
+  }
+  .item {
+    padding: 1rem;
+    position: relative;
+    @include lg-screen {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: -11px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #cdcccc;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        height: 88%;
+        right: 0;
+        top: 12%;
+        border-right: 4px solid #e6e5e5;
+      }
+      &:last-child::after,
+      &:last-child::before {
+        display: none;
+      }
+    }
+  }
+
+  .circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 3.25rem;
+      color: #fff;
+      font-weight: 900;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+    }
+  }
+
+  .title {
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  ul.list {
+    list-style-type: none;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    margin: 0;
+    padding: 0;
+
+    li {
+      border-radius: 10px;
+      padding: 0 5px;
+      margin: 5px 0;
+      position: relative;
+      .media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        top: 0;
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        overflow: auto;
+        z-index: 2;
+        width: 550px;
+        height: 320px;
+        padding: 0.5rem;
+        transition: visibility 0.3s linear, opacity 0.3s linear;
+        @include lg-screen {
+          &.right {
+            left: 80%;
+          }
+          &.left {
+            right: 80%;
+          }
+        }
+        a {
+          margin: auto;
+        }
+      }
+      &:hover .media,
+      .media:hover {
+        opacity: 1;
+        visibility: initial;
+      }
+    }
+  }
+
+  .highlight {
+    cursor: pointer;
+  }
+
+  #step-one {
+    .circle {
+      background-color: rgba(246, 189, 5, 1);
+      margin-bottom: 1.5rem;
+    }
+    .title {
+      color: rgb(246, 189, 5);
+    }
+    .highlight {
+      background-color: rgba(246, 189, 5, 0.5);
+    }
+  }
+
+  #step-two {
+    .circle {
+      background-color: rgba(198, 11, 126, 1);
+      margin-bottom: 0.5rem;
+    }
+    .title {
+      color: rgb(198, 11, 126);
+    }
+    .highlight {
+      background-color: rgba(198, 11, 126, 0.5);
+    }
+    .img-msg {
+      width: 90%;
+      margin: 0 auto 2rem;
+      display: block;
+    }
+  }
+
+  #step-three {
+    .circle {
+      background-color: rgba(11, 157, 218, 1);
+      margin-bottom: 0.5rem;
+    }
+    .title {
+      color: rgb(11, 157, 218);
+    }
+    .highlight {
+      background-color: rgba(11, 157, 218, 0.5);
+    }
+  }
+
+  #step-four {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    .circle {
+      background-color: rgba(4, 150, 121, 1);
+      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .title {
+      color: rgb(4, 150, 121);
+    }
+    .highlight {
+      background-color: rgba(4, 150, 121, 0.5);
+    }
+  }
+}
+
+#integracion .second {
+  flex-grow: 1;
+  padding: 1rem;
+  background-color: #fff;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  @include md-screen {
+    justify-content: space-between;
+  }
+  @include xl-screen {
+    max-height: 300px;
+  }
+  .panel {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    h1:first-of-type {
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 900;
+      margin: 0 1.5rem 0 1rem;
+    }
+    .btn-wrapper {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      position: relative;
+      @include md-screen {
+        border-left: 4px solid #e6e5e5;
+        padding-left: 2rem;
+      }
+      button {
+        width: 100%;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 3px;
+        padding: 3px;
+        box-shadow: none;
+      }
+    }
+  }
+  .img-uni {
+    width: 200px;
+    height: 135px;
+    display: block;
+    cursor: pointer;
+    transition: all 0.4s;
+    position: relative;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.img-auto {
+  height: auto;
+  width: 100%;
+}
+
+// Estilos del modal roles
+.modal-header {
+  padding: 0;
+  flex-flow: column nowrap;
+  border-bottom: 0;
+  .header-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: color(primary);
+    height: 35px;
+    margin-bottom: 0.5rem;
+    img {
+      height: 65%;
+      width: 25px;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.modal-body {
+  .title-modal {
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #4d4d4d;
+  }
+  .img-auto {
+    width: 95%;
+    margin: 0 auto;
+    display: block;
+  }
+}

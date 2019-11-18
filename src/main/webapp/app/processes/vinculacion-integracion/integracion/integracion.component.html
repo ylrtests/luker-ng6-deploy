@@ -1,0 +1,103 @@
+<div class="brand-container" id="integracion">
+    <div class="row no-gutters first">
+        <div id="step-one" class="col-md-6 col-lg-3 item hide">
+            <div class="circle">
+                <p>1</p>
+            </div>
+            <h2 class="title">Primera aproximación</h2>
+            <ul class="list">
+                <li *ngFor="let item of stepsInfo.first" [ngClass]="{'highlight': item.isHighlighted}">{{item.text}}
+                    <div class="media right" *ngIf="item.isHighlighted">
+                        <a href="{{item.src}}" target="_blank">
+                            <img *ngIf="!item.isVideo" src="{{item.src}}" alt="" class="img-auto">
+                        </a>
+                        <video *ngIf="item.isVideo" (mouseleave)="pauseVideo()" id="videoPlayer" width="100%"
+                            height="100%" controls>
+                            <source src="{{item.src}}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="step-two" class="col-md-6 col-lg-3 item hide">
+            <img class="img-msg" src="/content/images/integracion/int-msg.png" alt="">
+            <ul class="list">
+                <li *ngFor="let item of stepsInfo.second" [ngClass]="{'highlight': item.isHighlighted}">{{item.text}}
+                    <div class="media right" *ngIf="item.isHighlighted">
+                        <a href="{{item.src}}" target="_blank">
+                            <img *ngIf="!item.isVideo" src="{{item.src}}" alt="" class="img-auto">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="circle">
+                <p>2</p>
+            </div>
+            <h2 class="title">Primer día</h2>
+        </div>
+        <div id="step-three" class="col-md-6 col-lg-3 item hide">
+            <div class="circle">
+                <p>3</p>
+            </div>
+            <h2 class="title">Primer mes</h2>
+            <ul class="list">
+                <li *ngFor="let item of stepsInfo.third" [ngClass]="{'highlight': item.isHighlighted}">{{item.text}}
+                    <div class="media left" *ngIf="item.isHighlighted">
+                        <a href="{{item.src}}" target="_blank">
+                            <img *ngIf="!item.isVideo" src="{{item.src}}" alt="" class="img-auto">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="step-four" class="col-md-6 col-lg-3 item hide">
+            <ul class="list">
+                <li *ngFor="let item of stepsInfo.fourth" [ngClass]="{'highlight': item.isHighlighted}">{{item.text}}
+                    <div class="media left" *ngIf="item.isHighlighted">
+                        <a href="{{item.src}}" target="_blank">
+                            <img *ngIf="!item.isVideo" src="{{item.src}}" alt="" class="img-auto">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="circle">
+                <p>4</p>
+            </div>
+            <h2 class="title">Primer trimestre</h2>
+        </div>
+    </div>
+    <div class="row no-gutters second">
+        <div class="panel hide">
+            <h1 class="font-brand text-brand">Proceso de<br />integración</h1>
+            <div class="btn-wrapper">
+                <button class="btn btn-brand"
+                    (click)="openModalRoles(modalRoles, '/content/images/integracion/rol-jefe.jpg')">Rol del jefe
+                    inmediato</button>
+                <button class="btn btn-brand"
+                    (click)="openModalRoles(modalRoles, '/content/images/integracion/rol-talento.jpg')">Rol de
+                    talento</button>
+                <button class="btn btn-brand"
+                    (click)="openModalRoles(modalRoles, '/content/images/integracion/rol-auxbta.jpg')">Rol del aux.
+                    Bogotá</button>
+                <button class="btn btn-brand"
+                    (click)="openModalRoles(modalRoles, '/content/images/integracion/rol-auxciudades.jpg')">Rol del aux.
+                    Ciudades</button>
+            </div>
+        </div>
+        <img class="img-uni hide" src="/content/images/integracion/int-uni.png" alt="" (click)="openUniversity()">
+    </div>
+</div>
+
+<!-- Modal de Roles-->
+<ng-template #modalRoles let-c="close">
+    <div class="modal-header">
+        <div class="header-top">
+            <img src="/content/icons/close.png" alt="Cerrar" (click)="c('Cross click')">
+        </div>
+    </div>
+    <div class="modal-body">
+        <h3 class="title-modal">Ten en cuenta que las actividades subrayadas hacen parte de tus responsabilidades</h3>
+        <img class="img-auto" src="{{imgRol}}" alt="Definición estratégica">
+    </div>
+</ng-template>

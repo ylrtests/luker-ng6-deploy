@@ -1,0 +1,183 @@
+@import "src/main/webapp/content/scss/custom-functions";
+@import "src/main/webapp/content/scss/custom-variables";
+
+#compromisoRecono .hero.process-hero {
+  background-image: linear-gradient(
+    90deg,
+    rgba(128, 128, 128, 1) 0%,
+    rgba(181, 177, 177, 1) 35%,
+    rgba(158, 161, 162, 1) 100%
+  );
+  @include md-screen {
+    background-image: url("/content/images/heroes/process5-hero.jpg"),
+      linear-gradient(90deg, rgba(128, 128, 128, 1) 0%, rgba(181, 177, 177, 1) 35%, rgba(158, 161, 162, 1) 100%);
+    height: 55vh;
+    max-height: 415px;
+  }
+  @include lg-screen {
+    justify-content: initial;
+  }
+
+  div:first-child {
+    position: relative;
+    margin: 0.625rem 0 0 1%;
+    padding-top: 1.5rem;
+    text-align: center;
+    @include lg-screen {
+      width: 44%;
+    }
+    h1 {
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 6px 5px 9px rgba(10, 10, 10, 0.77);
+      font-size: 2rem;
+      font-weight: 900;
+      white-space: pre;
+      @include lg-screen {
+        font-size: 3.2rem;
+      }
+    }
+    .map-container {
+      z-index: 2;
+      height: 75%;
+      max-width: 438px;
+      max-height: 438px;
+      @include md-screen {
+        height: 85%;
+        position: absolute;
+      }
+      @include lg-screen {
+        height: 115%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+      }
+      @include xl-screen {
+        bottom: -50%;
+      }
+    }
+  }
+
+  .buttons-top {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    padding-left: 5%;
+    @include lg-screen {
+      flex-grow: 1;
+    }
+    .btn-brand {
+      text-transform: uppercase;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      min-width: 9rem;
+      min-height: 5.5rem;
+      &:first-child {
+        margin-bottom: 3.25rem;
+      }
+
+      &.filled {
+        padding: 1.1rem 1rem;
+      }
+    }
+  }
+}
+
+#compromisoRecono .process-bottom {
+  background-color: #fff;
+  flex-grow: 1;
+  position: relative;
+
+  h2.font-brand:first-child {
+    color: color(fifth);
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  .text-process {
+    width: calc(100% + 1px);
+    position: relative;
+    z-index: 1;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+
+    div {
+      color: #fff;
+      background-color: color(fifth-light);
+      padding: 10px 15% 10px 3%;
+      border-radius: 25px 0 0 25px;
+      text-align: justify;
+      font-weight: 100;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      border: 1px solid #bfbfbf;
+      width: 80%;
+      height: 125%;
+      top: -12%;
+      border-radius: 25px;
+      z-index: -1;
+      left: 2.5%;
+    }
+  }
+
+  .buttons-bottom {
+    margin-bottom: 20px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: intrinsic;
+    width: fit-content;
+    display: flex;
+    justify-content: initial;
+    align-items: flex-end;
+    flex-flow: column nowrap;
+    margin: 0 auto 10px;
+
+    @include md-screen {
+      flex-flow: row nowrap;
+      margin: 0 0 10px 0;
+    }
+
+    div:first-child {
+      text-align: right;
+      margin-right: 5rem;
+      position: relative;
+      h3 {
+        margin: 0;
+        text-transform: uppercase;
+        color: #808080;
+        font-size: 1.5rem;
+      }
+      h3:first-child {
+        font-weight: 900;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 80%;
+        right: -2.5rem;
+        width: 2px;
+        background-color: color(fifth-dark);
+        top: 10%;
+      }
+    }
+
+    .btn-brand {
+      margin-right: 3rem;
+      margin-top: 30px;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+    }
+  }
+}

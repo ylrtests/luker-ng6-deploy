@@ -1,0 +1,61 @@
+<div class="brand-container" id="planeacionEstr">
+    <div class="row">
+        <div class="col-12">
+            <div class="hero process-hero">
+                <div>
+                    <h1 class="font-brand">Talento & gestión</h1>
+                    <div class="map-container">
+                        <jhi-map-luker [activeElement]="2" [fastLoad]="true"></jhi-map-luker>
+                    </div>
+                </div>
+                <div class="buttons-top">
+                    <a class="btn btn-brand bg-2 filled" routerLink="./placeholder">
+                        <span class="font-weight-bold">Rol del<br>área</span>
+                        <span class="btn-badge"><img src="/content/icons/group-idea.svg" alt=""
+                                class="icon second"></span>
+                    </a>
+                    <a class="btn btn-brand bg-2 filled" routerLink="./placeholder">
+                        <span class="font-weight-bold">Descriptor<br>de cargo</span>
+                        <span class="btn-badge"><img src="/content/icons/figure-up.svg" alt=""
+                                class="icon second"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row no-gutters process-bottom">
+        <div class="col-lg-5"></div>
+        <div class="col-lg-7">
+            <h2 class="font-brand">Planeación y estructura</h2>
+            <div class="text-process">
+                <div>
+                    Garantizamos que la organizaci&oacute;n cuente con <strong>la estructura</strong> y<strong> roles
+                        necesarios</strong> para sus retos <strong>actuales y futuros.</strong>
+                </div>
+            </div>
+            <div class="buttons-bottom">
+                <div>
+                    <h3>Conoce</h3>
+                    <h3>Más</h3>
+                </div>
+                <button class="btn btn-brand bg-2 dark" (click)="cajaHerramientasModal.open()">
+                    <span class="font-weight-bold">Caja de herramientas <img class="right-arrow"
+                            src="/content/icons/right-arrow.svg"></span>
+                    <span class="btn-badge"><img src="/content/icons/tool.svg" alt="" class="icon second"></span>
+                </button>
+                <a class="btn btn-brand bg-2 dark" routerLink="./definiciones">
+                    <span class="font-weight-bold">Definiciones <img class="right-arrow"
+                            src="/content/icons/right-arrow.svg"></span>
+                    <span class="btn-badge"><img src="/content/icons/group-cycle.svg" alt="" class="icon second"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Caja de Herramientas -->
+<jhi-tpl-caja-herramientas #cajaHerramientasModal [processNumber]="2"
+    [elementsCajaHerramientas]="elementsCajaHerramientas" [titleSecondColumn]="'Formatos\npara descargar'"
+    [titleFirstColumn]="'Consulta\naquí'" [titleProcess]="'Planeación y estructura'" [positionTitleProcess]="'right'">
+</jhi-tpl-caja-herramientas>

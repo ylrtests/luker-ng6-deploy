@@ -14,6 +14,7 @@ import { LukerSharedModule } from 'app/shared';
 import { LukerCoreModule } from 'app/core';
 import { LukerAppRoutingModule } from './app-routing.module';
 import { LukerHomeModule } from './home/home.module';
+import { LukerProcessesModule } from './processes/processes.module';
 import { LukerAccountModule } from './account/account.module';
 import { LukerEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
@@ -27,6 +28,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         LukerSharedModule,
         LukerCoreModule,
         LukerHomeModule,
+        LukerProcessesModule,
         LukerAccountModule,
         LukerEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here

@@ -1,0 +1,65 @@
+<div class="brand-container" id="vincint">
+    <div class="row">
+        <div class="col-12">
+            <div class="hero process-hero">
+                <div>
+                    <h1 class="font-brand">Talento & gestión</h1>
+                    <div class="map-container">
+                        <jhi-map-luker [activeElement]="3" [fastLoad]="true"></jhi-map-luker>
+                    </div>
+                </div>
+                <div class="buttons-top">
+                    <a class="btn btn-brand bg-3 filled" routerLink="./vinculacion">
+                        <span class="font-weight-bold">Vinculación</span>
+                        <span class="btn-badge"><img src="/content/icons/shakehand.svg" alt=""
+                                class="icon third"></span>
+                    </a>
+                    <a class="btn btn-brand bg-3 filled" routerLink="./integracion">
+                        <span class="font-weight-bold">Integración</span>
+                        <span class="btn-badge"><img src="/content/icons/group-meet.svg" alt=""
+                                class="icon third"></span>
+                    </a>
+                    <div class="title-process">
+                        <h2 class="font-brand">Vinculación</h2>
+                        <h2 class="font-brand">E Integración</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row no-gutters process-bottom">
+        <div class="col-lg-5"></div>
+        <div class="col-lg-7">
+            <div class="text-process">
+                <div>
+                    Garantizamos que la organización cuente con el <span class="font-weight-bold">Talento</span>
+                    requerido para el momento <span class="font-weight-bold">actual y futuro</span> y que su <span
+                        class="font-weight-bold">proceso de INTEGRACIÓN</span> a la organización potencialice su
+                    productividad y retención.
+                </div>
+            </div>
+            <div class="buttons-bottom">
+                <div>
+                    <h3>Conoce</h3>
+                    <h3>Más</h3>
+                </div>
+                <button class="btn btn-brand bg-3" (click)="cajaHerramientasModal.open()">
+                    <span class="font-weight-bold">Caja de herramientas <img class="right-arrow" src="/content/icons/right-arrow.svg"></span>
+                    <span class="btn-badge"><img src="/content/icons/tool.svg" alt="" class="icon third"></span>
+                </button>
+                <a class="btn btn-brand bg-3" routerLink="./definiciones">
+                    <span class="font-weight-bold">Definiciones <img class="right-arrow" src="/content/icons/right-arrow.svg"></span>
+                    <span class="btn-badge"><img src="/content/icons/group-cycle.svg" alt="" class="icon third"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Caja de Herramientas -->
+<jhi-tpl-caja-herramientas #cajaHerramientasModal [processNumber]="3"
+    [elementsCajaHerramientas]="elementsCajaHerramientas" [titleFirstColumn]="'Formatos\npara descargar'"
+    [titleSecondColumn]="'Formatos\npara descargar'" [titleProcess]="'Vinculación e integración'"
+    [positionTitleProcess]="'center'">
+</jhi-tpl-caja-herramientas>

@@ -12,7 +12,7 @@
 
 eureka:
     instance:
-        hostname: luker-test-6.herokuapp.com
+        hostname: luker-test-9.herokuapp.com
         non-secure-port: 80
         prefer-ip-address: false
     client:
