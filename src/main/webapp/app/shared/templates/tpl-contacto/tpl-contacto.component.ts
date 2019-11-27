@@ -9,14 +9,7 @@ export class TplContactoComponent implements OnInit {
 
   public contactList = [
     {
-      'title': 'Comercial',
-      'name': 'Ángela Chaparro',
-      'position': 'Socia de negocio talento & negocio',
-      'email': 'achaparro@casaluker.com.co',
-      'gender': 'f'
-    },
-    {
-      'title': 'Marcas y marcas de canal',
+      'title': ' Comercial, Marcas y marcas de canal',
       'name': 'Santiago Silva',
       'position': 'Socio de negocio talento & negocio',
       'email': 'ssilva@casaluker.com.co',

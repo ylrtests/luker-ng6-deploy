@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef, Renderer2 } from '@angular/core';
-import { Location } from '@angular/common';
+import { Location, PlatformLocation } from '@angular/common';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'jhi-lider',
@@ -8,10 +9,12 @@ import { Location } from '@angular/common';
 })
 export class LiderComponent implements OnInit, AfterViewInit, OnDestroy {
 
+  private modalReference: any;
   public processClasses: any;
+  public urlImgModal = '';
 
   constructor(private elementRef: ElementRef,
-    private renderer2: Renderer2, private location: Location) { }
+    private renderer2: Renderer2, private location: Location, private lct: PlatformLocation, private modalService: NgbModal) { }
 
   ngOnInit() {
     this.processClasses = {
@@ -35,6 +38,14 @@ export class LiderComponent implements OnInit, AfterViewInit, OnDestroy {
   // Función que se usa para volver a la página anterior
   goBack() {
     this.location.back();
+  }
+
+  // Función que abre el modal de la imagen de Estilo de Liderazgo CasaLuker
+  openModalLiderazgo(modal, imgUrl: string) {
+    this.modalReference = this.modalService.open(modal);
+    this.urlImgModal = imgUrl;
+    // Closes modal when back button is clicked
+    this.lct.onPopState(() => this.modalReference.close());
   }
 
 }

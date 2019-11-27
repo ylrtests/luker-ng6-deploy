@@ -9,11 +9,11 @@
                     </div>
                 </div>
                 <div class="buttons-top">
-                    <a class="btn btn-brand bg-2 filled" routerLink="./placeholder">
+                    <button class="btn btn-brand bg-2 filled" (click)="rolAreaModal.open()">
                         <span class="font-weight-bold">Rol del<br>área</span>
                         <span class="btn-badge"><img src="/content/icons/group-idea.svg" alt=""
                                 class="icon second"></span>
-                    </a>
+                    </button>
                     <a class="btn btn-brand bg-2 filled" routerLink="./placeholder">
                         <span class="font-weight-bold">Descriptor<br>de cargo</span>
                         <span class="btn-badge"><img src="/content/icons/figure-up.svg" alt=""
@@ -58,4 +58,9 @@
 <jhi-tpl-caja-herramientas #cajaHerramientasModal [processNumber]="2"
     [elementsCajaHerramientas]="elementsCajaHerramientas" [titleSecondColumn]="'Formatos\npara descargar'"
     [titleFirstColumn]="'Consulta\naquí'" [titleProcess]="'Planeación y estructura'" [positionTitleProcess]="'right'">
+</jhi-tpl-caja-herramientas>
+
+<!-- Modal Rol de área -->
+<jhi-tpl-caja-herramientas #rolAreaModal [processNumber]="2" [elementsCajaHerramientas]="elementsRolDeArea"
+    [titleFirstColumn]="''" [titleModal]="'Rol del área'" [hideToolBoxIcon]="true">
 </jhi-tpl-caja-herramientas>

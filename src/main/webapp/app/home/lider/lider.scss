@@ -85,6 +85,7 @@
     font-size: 1rem;
     font-weight: 700;
     color: color(sixth);
+    padding-right: 1rem;
   }
   .list {
     line-height: 1rem;
@@ -102,14 +103,27 @@
       flex: 1;
       position: relative;
       min-width: 230px;
+      @include lg-screen {
+        flex: none;
+        min-width: auto;
+        &:first-child {
+          width: 40%;
+        }
+        &:last-child {
+          width: 60%;
+        }
+      }
       .header {
         display: flex;
         justify-content: center;
         padding-top: 2rem;
         max-height: 200px;
-        height: 35%;
+        height: 25%;
         margin-top: 1rem;
         margin-bottom: 1rem;
+        @include lg-screen {
+          height: 18%;
+        }
         h2:first-of-type {
           font-weight: 700;
           font-size: 1.2rem;
@@ -119,19 +133,22 @@
       }
       .lamp {
         max-height: 200px;
-        height: 40%;
+        height: 30%;
         position: absolute;
         top: 0;
         right: 0.5rem;
+        @include lg-screen {
+          height: 27%;
+        }
       }
       .list {
         font-size: 0.8rem;
       }
       .img-lider {
-        max-width: 289px;
+        max-width: 310px;
         width: 100%;
         max-height: 300px;
-        margin: 1rem auto;
+        margin: 0 auto;
         display: block;
       }
       // Estilos cuando el fondo sea del color del proceso
@@ -173,5 +190,36 @@
     font-size: 1.7rem;
     top: -2px;
     left: -15px;
+  }
+}
+
+// Estilos del modal de Liderazgo
+.modal-header {
+  padding: 0;
+  flex-flow: column nowrap;
+  border-bottom: 0;
+  .header-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: color(primary);
+    height: 35px;
+    margin-bottom: 0.5rem;
+    img {
+      height: 65%;
+      width: 25px;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.modal-body {
+  .img-auto {
+    width: 95%;
+    margin: 0 auto;
+    display: block;
   }
 }
