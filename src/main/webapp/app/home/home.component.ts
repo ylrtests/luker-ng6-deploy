@@ -15,8 +15,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     modalRef: NgbModalRef;
 
     public carouselImages = [
-        // Se añade la fecha actual "getTime()" a la url de la imagen, para no guardarla en cache.
-        // Esto debido a la solicitud de obtener imagenes desde un repositorio independiente.
         'https://lukerimages.000webhostapp.com/img/main.jpg',
         'https://lukerimages.000webhostapp.com/img/imagen-1.jpg',
         'https://lukerimages.000webhostapp.com/img/imagen-2.jpg',

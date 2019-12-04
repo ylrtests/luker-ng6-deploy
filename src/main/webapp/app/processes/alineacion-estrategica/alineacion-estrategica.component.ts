@@ -19,7 +19,12 @@ export class AlineacionEstrategicaComponent implements OnInit {
           { title: 'Plan anual área Presentación', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
           { title: 'Instructivo agendas', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
           { title: 'Seguimiento mensual ', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
-          { title: 'Seguimiento cuatrimestral ', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' }
+          { title: 'Seguimiento cuatrimestral', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Autodiagnóstico de Liderazgo', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Análisis de escenarios', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Autodiagnóstico de delegación', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Claves para delegar', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+
         ]
       }
     ],
@@ -31,22 +36,13 @@ export class AlineacionEstrategicaComponent implements OnInit {
           { title: 'Marcas', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
           { title: 'Marcas de canal', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
           { title: 'Aseo', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Comercial', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
           { title: 'CABAS', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
           { title: 'Logística', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
           { title: 'Talento & Gestión', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' }
         ]
       },
-      {
-        subtitle: 'Plan\nanual',
-        items: [
-          { title: 'Marcas', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
-          { title: 'Marcas de canal', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
-          { title: 'Aseo', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
-          { title: 'CABAS', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
-          { title: 'Logística', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
-          { title: 'Talento & Gestión', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' }
-        ]
-      }
+      // Plan anual se añade en ngOnInit de acuerdo al rol
     ]
   };
   private modalReference: any;
@@ -54,6 +50,25 @@ export class AlineacionEstrategicaComponent implements OnInit {
   constructor(private modalService: NgbModal, private location: PlatformLocation) { }
 
   ngOnInit() {
+    if (this.canShowPlanAnual()) {
+      this.elementsCajaHerramientas.second.push({
+        subtitle: 'Plan\nanual',
+        items: [
+          { title: 'Marcas', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Marcas de canal', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Aseo', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Comercial', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'CABAS', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Logística', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Talento & Gestión', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' }
+        ]
+      });
+    }
+  }
+
+  // Método que validaría si puede ver o no el plan anual de acuerdo al rol
+  canShowPlanAnual() {
+    return true;
   }
 
   openDefinicionEstrategica(modal) {

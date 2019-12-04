@@ -19,6 +19,11 @@ export class VinculacionIntegracionComponent implements OnInit, OnDestroy {
           { title: 'Concepto paso temporal a fijo', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
           { title: 'Procedimiento convocatoria interna', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
           { title: 'Guía entrevista por competencias', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Protocolo de escucha de entrevista', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Tips de etapas de entrevista', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Técnica STAR', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Tipos de preguntas y técnicas de apoyo', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
+          { title: 'Tips para diligenciar concepto de entrevista', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
         ]
       }
     ],
