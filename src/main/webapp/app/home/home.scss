@@ -66,7 +66,10 @@ Main page styles
       display: flex;
       flex-flow: column wrap;
       align-items: center;
-      width: 75%;
+      width: 90%;
+      @include md-screen {
+        width: 75%;
+      }
       h2 {
         //Title
         color: #fff;
@@ -85,6 +88,7 @@ Main page styles
         //Buttons wrapper
         position: relative;
         width: 280px;
+        margin-bottom: 15px;
         .btn-brand {
           margin-bottom: 1.875rem;
           width: 100%;

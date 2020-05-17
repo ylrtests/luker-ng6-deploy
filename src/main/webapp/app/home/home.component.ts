@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     isAuthenticated() {
         // Aqui simplemente se simula si está o no autenticado
         // En producción se usa el código comentado o el código implementado.
-        return true;
+        return false;
         // return this.principal.isAuthenticated();
     }
 
